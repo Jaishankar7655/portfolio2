@@ -7,6 +7,7 @@ export const personalData = {
         location: "Bhopal, Madhya Pradesh",
         phone: "+91 8770399538",
         email: "Kanchanpharma21@gmail.com",
+        linkedin: "https://www.linkedin.com/in/kanchan-patel-ab005a392/",
     },
     summary: "Dedicated and detail-oriented B. Pharm (4th Year) student at Ravishankar College of Pharmacy. Gained hands-on industrial training in capsule manufacturing and quality standards. Eager to leverage academic knowledge and technical skills in a professional pharmaceutical environment.",
     education: [

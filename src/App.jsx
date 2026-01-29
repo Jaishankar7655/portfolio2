@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { ChevronDown, Mail, User, GraduationCap, Briefcase, FlaskConical, BookOpen, Award, Palette, Menu, X, Microscope, CheckCircle2, Factory } from 'lucide-react';
+import { ChevronDown, Mail, User, GraduationCap, Briefcase, FlaskConical, BookOpen, Award, Palette, Menu, X, Microscope, CheckCircle2, Factory, Linkedin } from 'lucide-react';
 import Lenis from 'lenis';
 import ThreeBackground from './ThreeBackground';
 import { personalData } from './data';
@@ -227,9 +227,12 @@ const App = () => {
               <motion.div variants={scaleIn} className="mb-8 md:mb-12 relative inline-block">
                 <div className="w-24 h-24 md:w-48 md:h-48 rounded-full p-[2px] bg-gradient-to-tr from-primary via-white to-accent mx-auto animate-[spin_10s_linear_infinite]"></div>
                 <div className="absolute inset-[2px] rounded-full bg-slate-950 p-1 md:p-2 overflow-hidden">
-                  <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                    <User size={40} className="text-slate-500/50 md:hidden" />
-                    <User size={64} className="text-slate-500/50 hidden md:block" />
+                  <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/image.png"
+                      alt={personalData.name}
+                      className="w-full h-full object-cover rounded-full opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    />
                   </div>
                 </div>
               </motion.div>
@@ -483,18 +486,19 @@ const App = () => {
 
                 <motion.a
                   whileHover={{ scale: 1.02 }}
-                  href={`tel:${personalData.contact.phone}`}
-                  className="p-6 md:p-10 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-white/5 flex flex-col items-center text-center gap-4 md:gap-6 group hover:border-accent/30 transition-all shadow-xl"
+                  href={personalData.contact.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-6 md:p-10 bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl border border-white/5 flex flex-col items-center text-center gap-4 md:gap-6 group hover:border-blue-500/30 transition-all shadow-xl"
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-300 text-accent">
-                    <Briefcase size={24} className="md:w-8 md:h-8" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-500/10 rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 text-blue-500">
+                    <Linkedin size={24} className="md:w-8 md:h-8" />
                   </div>
                   <div>
-                    <div className="text-sm md:text-lg font-semibold text-slate-500 mb-1 md:mb-2">Call Me</div>
-                    <div className="text-lg md:text-2xl font-bold text-white">{personalData.contact.phone}</div>
+                    <div className="text-sm md:text-lg font-semibold text-slate-500 mb-1 md:mb-2">Connect on LinkedIn</div>
+                    <div className="text-sm md:text-xl font-bold text-white">Kanchan Patel</div>
                   </div>
-                </motion.a>
-              </div>
+                </motion.a>              </div>
 
               <div className="mt-12 md:mt-20 text-center border-t border-white/5 pt-8 md:pt-10">
                 <p className="text-slate-500 mb-4 text-sm md:text-base">Located in <span className="text-white">{personalData.contact.location}</span></p>
